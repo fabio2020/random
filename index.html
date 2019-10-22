@@ -2,7 +2,7 @@
 <meta charset="UTF-8">
 <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
 <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
-<title>XXX by  fabio2020</title>
+<title>XXX2020</title>
 <style>
   body {
   margin: 0;
@@ -48,10 +48,45 @@ var buildings = {
       var x = r * cos(a) / 2;
       var y = r * sin(a) / 2;
       vertex(x, y);
+      //ellipse(x,y,4,4)
+      //rect(-x,-y,-a,o)
       arc(x, y, r, o, a, a);
     }window.CP.exitedLoop(0);
     endShape();
   } };
+      //# sourceURL=pen.js
     </script>
-  </body>
-</html>
+  
+  <canvas id="myCanvas" width="200" height="200"
+style="border:0px solid #d3d3d3;">
+Your browser does not support the canvas element.
+</canvas>
+    
+  
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+// Create gradient
+var grd = ctx.createRadialGradient(33,33,33,66,66,333);
+grd.addColorStop(0,"black");
+grd.addColorStop(1,"white");
+
+// Fill with gradient
+ctx.fillStyle = grd;
+ctx.fillRect(0,0,200,200);
+</script>
+
+<script>
+var canvas = document.getElementById("myCanvas");
+var ctx=canvas.getContext("2d");
+ctx.font="60px Arial";
+ctx.fillStyle = "white";
+ctx.textAlign = "center";
+ctx.fillText("X X X", canvas.width/2, canvas.height/2);
+
+</script>
+  
+  
+</body>
+  </html>
