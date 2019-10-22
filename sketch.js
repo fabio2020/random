@@ -1,35 +1,25 @@
-var canvas;
-var h1;
-var x = 100;
-var y = 100;
-var bgcolor;
-var button;
-var slider;
-var input;
-
-function setup() {
-  canvas = createCanvas(200, 200);
-  bgcolor = color(0);
-  canvas.position(520,280);
-  createP("Click!");
-  h1 = createElement('h1', 'Click the Button . . . Waiting');
-  h1.position(500,200);
-  button = createButton("go..go..go");
-  button.mousePressed(changeColor);
-  slider = createSlider(10, 100, 47);
-  input = createInput('Random');
+function setup(){
+  createCanvas(800,400)
+  background(0) 
 }
-function changeColor() {
-  bgcolor = color(random(0, 100));
-  h1.html("Now I Will Show Random Numbers")
-  n1 = createP("Click again for New Random Number " + random(0, 100));
+function draw(){
+  background(0)
+  buildings.show()
 }
-
-function draw() {
-  background(bgcolor);
-  fill(0, 0, 255);
-  rect(x, y, slider.value(), slider.value());
-  h1.position(x, y);
-  x += random(-3, 3);
-  text(input.value(), 10, 20)
+var buildings={
+  "show": function(){
+    translate(canvas.width/2,canvas.height/2)
+    beginShape()
+    var d=88.66
+    for(var a = 0; a <= TWO_PI; a+=TWO_PI/d){
+      
+      var o = map(cos(a * 666 + frameCount * 666),.66,.33,-33,3)
+      var r = 33+o
+      var x = (r*cos(a))/2
+      var y = (r*sin(a))/2
+      vertex(x,y)
+      arc(x,y,r,o,a,a)
+  }
+    endShape()
+  }
 }
